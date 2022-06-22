@@ -28,4 +28,14 @@ public class DateTimeTests {
         Assert.assertEquals("Should be today!",expected, actual);
     }
 
+    @Test
+    public void testTimeFormat(){
+        DateTimeController controller = new DateTimeController();
+
+        String actual = controller.nowFormat("HH:mm:ss");
+        String expected = LocalTime.now().toString().substring(0,8);
+
+        Assert.assertEquals("Should be today!",expected, actual);
+    }
+
 }

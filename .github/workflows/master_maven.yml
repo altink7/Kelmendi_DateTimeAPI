@@ -4,13 +4,11 @@
 name: Java CI with Maven for master
 # on ist der Trigger wann es durchgefuehrt werden soll
 on:
-# beim pushen ins remote/main wird es durchgefuehrt
   push:
     branches: [ "master" ]
-    # und bei einem PR
   pull_request:
     branches: [ "master" ]
-
+# jobs sind die Job s die durchgefuehrt werden
 jobs:
   build:
 
@@ -24,6 +22,8 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
+# alternative von Backend Web Engineering -> context von Dockerfile
+# in  diesem Fall werden dei Befehle von Dockerfile ausgefuehrt
     - name: Build with Maven
       run: mvn -B package --file pom.xml
       
